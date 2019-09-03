@@ -4,7 +4,7 @@ module Cadmium
   class NGrams
     property tokenizer : Cadmium::Tokenizer
 
-    def initialize(@tokenizer = Cadmium::WordTokenizer.new)
+    def initialize(@tokenizer = Cadmium::Word.new)
     end
 
     def bigrams(sequence, start_symbol = nil, end_symbol = nil)
