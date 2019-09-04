@@ -2,9 +2,9 @@ require "cadmium_tokenizer"
 
 module Cadmium
   class NGrams
-    property tokenizer : Cadmium::Tokenizer
+    property tokenizer : Cadmium::Tokenizer::Base
 
-    def initialize(@tokenizer = Cadmium::WordTokenizer.new)
+    def initialize(@tokenizer = Cadmium::Tokenizer::Word.new)
     end
 
     def bigrams(sequence, start_symbol = nil, end_symbol = nil)
