@@ -7,16 +7,16 @@ module Cadmium
     def initialize(@tokenizer = Cadmium::Tokenizer::Word.new)
     end
 
+    def unigrams(sequence, start_symbol = nil, end_symbol = nil)
+      ngrams(sequence, 1, start_symbol, end_symbol)
+    end
+
     def bigrams(sequence, start_symbol = nil, end_symbol = nil)
       ngrams(sequence, 2, start_symbol, end_symbol)
     end
 
     def trigrams(sequence, start_symbol = nil, end_symbol = nil)
       ngrams(sequence, 3, start_symbol, end_symbol)
-    end
-
-    def multigrams(sequence, n, start_symbol = nil, end_symbol = nil)
-      ngrams(sequence, n, start_symbol, end_symbol)
     end
 
     def ngrams(sequence, n, start_symbol = nil, end_symbol = nil)
